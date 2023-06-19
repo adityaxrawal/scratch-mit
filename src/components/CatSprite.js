@@ -1,6 +1,21 @@
 import React from "react";
 
-export default function CatSprite() {
+export default function CatSprite({
+  Move10Steps,
+  Turn15DegreeRedo,
+  Turn15DegreeUndo,
+  SetYTo,
+  SetChangeByX,
+  SetChangeByY,
+  GlideSecsToRandomPosition,
+  GlideSecsXY,
+  GoToRandomPosition,
+  GoToXYPosition,
+  PointInDirection,
+  PointTowards,
+  SetXTo,
+}) {
+  console.log("Move 10 Steps in Sprite", Move10Steps);
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +24,10 @@ export default function CatSprite() {
       viewBox="0.3210171699523926 0.3000000357627869 95.17898101806641 100.04156036376953"
       version="1.1"
       xmlSpace="preserve"
+      className="CatSprite"
+      style={{
+        transform: `translateX(${Move10Steps}px) rotate(${Turn15DegreeRedo}deg) rotate(${Turn15DegreeUndo}deg)`,
+      }}
     >
       <g>
         <g id="Page-1" stroke="none" fillRule="evenodd">
