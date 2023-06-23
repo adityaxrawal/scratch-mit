@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { setRepeat } from "../../redux/events/eventActions";
+import { setRepeat } from "../../../redux/events/eventActions";
 
 const Repeat = ({ comp_id, events, set_repeat }) => {
   console.log("Events in Repeat", events);

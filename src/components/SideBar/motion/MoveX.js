@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 // Move Component for Sidebar
-const Move = ({ character, comp_id }) => {
+const MoveX = ({ character, comp_id }) => {
   const [steps, setSteps] = useState(0);
 
   // Function used for moiving Sprint
@@ -39,4 +39,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Move);
+export default connect(mapStateToProps)(MoveX);

@@ -1,21 +1,21 @@
 import React, { useState } from "react";
+import Icon from "../../Icon";
 import { connect } from "react-redux";
-import { setCharacterAngle } from "../../redux/character/actions";
+import { setCharacterAngle } from "../../../redux/character/actions";
 
 const TurnAntiClockWise = ({ character, characterAngle, comp_id }) => {
+  console.log("Anti", character);
   const [angle, setAngle] = useState(0);
 
   // handle anti-clockwise rotation
   const handleClick = () => {
     let anti_angle = -1 * angle;
     const el = document.getElementById(character.active);
-    const character_angle = character.characters.find(
-      (x) => x.id === character.active
-    );
-    if (character_angle) {
-      el.style.transform = `rotate(${character_angle.angle + anti_angle}deg)`;
-      characterAngle(character_angle.angle + anti_angle);
-    }
+    const character_angle = character.characters[0].angle;
+    console.log("Angle Anti", character_angle);
+    console.log("Selected angle ANti", anti_angle);
+    el.style.transform = `rotate(${character_angle + anti_angle}deg)`;
+    characterAngle(character_angle + anti_angle);
   };
 
   return (
@@ -26,6 +26,7 @@ const TurnAntiClockWise = ({ character, characterAngle, comp_id }) => {
     >
       <div className="flex flex-row">
         <div className="text-white">Turn</div>
+        <Icon name="undo" size={15} className="text-white mx-2" />
         <input
           className="w-10 mx-2 p-1 py-0 text-center"
           type="number"

@@ -1,10 +1,10 @@
 import React from "react";
-import "./CatSprite.css";
+import "./Sprite.css";
 
-export default function CatSprite({ charac_id }) {
+export default function CatSprite() {
   return (
     // Sprite Component
-    <div id={charac_id} className="character inline-block z-0">
+    <div id="sprite" className="character inline-block z-0">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="95.17898101806641"

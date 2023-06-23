@@ -1,4 +1,4 @@
-import { SET_ANGLE } from "./actionTypes";
+import { SET_ANGLE } from "./actionTypes"; 
 
 const initialState = {
   characters: [{ id: "sprite", angle: 0} ],

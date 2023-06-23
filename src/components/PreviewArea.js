@@ -1,9 +1,9 @@
 import React from "react";
-import CatSprite from "./CatSprite";
+import Sprite from "./Sprite";
 import { connect } from "react-redux";
 
 function PreviewArea({ character }) {
-  console.log("Character", character)
+  console.log("Charactertrsydtufh", character.characters);
   var pos1 = 0,
     pos2 = 0,
     pos3 = 0,
@@ -49,28 +49,23 @@ function PreviewArea({ character }) {
       id="preview_area"
     >
       <div className="flex justify-around h-full">
-        {character.characters.map((x, i) => {
-          return (
+        <div
+          id={`sprite`}
+          className={`absolute`}
+          onMouseDown={(e) => dragMouseDown(e, `sprite`)}
+        >
+          <div id={`sprite-div`} className="character">
             <div
-              id={`${x.id}-${i}`}
-              key={i}
-              className={`absolute`}
-              onMouseDown={(e) => dragMouseDown(e, `${x.id}-${i}`)}
-            >
-              <div id={`${x.id}-div`} className="character">
-                <div
-                  className="hidden border-2 p-2 ml-3 mb-2 w-auto whitespace-nowrap"
-                  id={x.id + "-message-box"}
-                ></div>
-                <div
-                  className="hidden rounded-full border-2 w-4 left-1/2 h-4 ml-3 mb-2 whitespace-nowrap"
-                  id={x.id + "-message-box1"}
-                ></div>
-                <CatSprite charac_id={x.id} />
-              </div>
-            </div>
-          );
-        })}
+              className="hidden border-2 p-2 ml-3 mb-2 w-auto whitespace-nowrap"
+              id={"sprite" + "-message-box"}
+            ></div>
+            <div
+              className="hidden rounded-full border-2 w-4 left-1/2 h-4 ml-3 mb-2 whitespace-nowrap"
+              id={"sprite" + "-message-box1"}
+            ></div>
+            <Sprite />
+          </div>
+        </div>
       </div>
     </div>
   );

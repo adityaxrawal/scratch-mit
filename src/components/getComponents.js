@@ -1,17 +1,17 @@
 import React from "react";
-import Move from "./motion/Move";
-import TurnAntiClockwise from "./motion/TurnAntiClockwise";
-import TurnClockwise from "./motion/TurnClockwise";
-import GotoXY from "./motion/Goto";
-import SayMessage from "./looks/SayMessage";
-import SayMessageWithTimer from "./looks/SayMessageWithTimer";
-import Size from "./looks/Size";
-import Wait from "./control/Wait";
-import Repeat from "./control/Repeat";
-import MoveY from "./motion/MoveY";
-import BroadcastMessage from "./events/broadcast";
-import Think from "./looks/Think";
-import ThinkWithTimer from "./looks/ThinkWithTimer";
+import MoveX from "./SideBar/motion/MoveX";
+import TurnAntiClockwise from "./SideBar/motion/TurnAntiClockwise";
+import TurnClockwise from "./SideBar/motion/TurnClockwise";
+import GotoXY from "./SideBar/motion/Goto";
+import SayMessage from "./SideBar/looks/SayMessage";
+import SayMessageWithTimer from "./SideBar/looks/SayMessageWithTimer";
+import Size from "./SideBar/looks/Size";
+import Wait from "./SideBar/control/Wait";
+import Repeat from "./SideBar/control/Repeat";
+import MoveY from "./SideBar/motion/MoveY";
+import BroadcastMessage from "./SideBar/events/broadcast";
+import Think from "./SideBar/looks/Think";
+import ThinkWithTimer from "./SideBar/looks/ThinkWithTimer";
 
 // fetch components based on different keys
 export const getComponent = (key, id) => {
@@ -19,7 +19,7 @@ export const getComponent = (key, id) => {
     case "MOVE_Y":
       return <MoveY comp_id={id} />;
     case "MOVE":
-      return <Move comp_id={id} />;
+      return <MoveX comp_id={id} />;
 
     case "TURN_CLOCKWISE":
       return <TurnClockwise comp_id={id} />;

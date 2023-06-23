@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { setWait } from "../../redux/events/eventActions";
+import { setWait } from "../../../redux/events/eventActions";
 
 const Wait = ({ events, comp_id, set_wait }) => {
   const [wait, setStateWait] = useState(0);
